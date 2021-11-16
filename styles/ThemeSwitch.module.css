@@ -1,0 +1,13 @@
+.switch {
+  align-items: center;
+  background: #5fdef3;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  width: 50px;
+  cursor: pointer;
+}
+
+.switch--icon {
+  --ggs: 1.3;
+}

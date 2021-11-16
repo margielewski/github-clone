@@ -1,7 +1,7 @@
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
-      GRAPHQL_API_URL: string;
+      NEXT_PUBLIC_GRAPHQL_API_URL: string;
       GITHUB_CLIENT_ID: string;
       GITHUB_CLIENT_SECRET: string;
       NEXTAUTH_URL: string;

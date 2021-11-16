@@ -1,8 +1,11 @@
-import '../styles/globals.css';
+import 'styles/globals.css';
+import 'styles/theme.css';
 import type { AppProps } from 'next/app';
 import { SessionProvider } from 'next-auth/react';
 import { NextPage } from 'next';
 import { ReactElement, ReactNode } from 'react';
+import { ApolloProvider } from '@apollo/client';
+import client from 'boot/client';
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -18,9 +21,11 @@ function App({
 }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
   return (
-    <SessionProvider session={session}>
-      {getLayout(<Component {...pageProps} />)}
-    </SessionProvider>
+    <ApolloProvider client={client}>
+      <SessionProvider session={session}>
+        {getLayout(<Component {...pageProps} />)}
+      </SessionProvider>
+    </ApolloProvider>
   );
 }
 

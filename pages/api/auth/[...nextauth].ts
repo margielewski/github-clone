@@ -11,20 +11,22 @@ export default NextAuth({
   callbacks: {
     jwt: async ({ token, user, account }) => {
       if (user && account && account.provider === 'github')
-        token.githubUserAccessToken = account.access_token;
-
-      return Promise.resolve(token);
+        token.accessToken = account.access_token;
+      return token;
     },
-    session: async ({ token, session }) =>
-      Promise.resolve({
-        ...session,
-        accessToken: token.githubUserAccessToken,
-      }),
+    session: async ({ session, token }) => {
+      session.accessToken = token.accessToken;
+      return session;
+    },
   },
   session: {
     jwt: true,
   },
   jwt: {
     secret: process.env.NEXTAUTH_JWT_SECRET,
+  },
+  secret: process.env.NEXTAUTH_JWT_SECRET,
+  pages: {
+    signIn: '/signin',
   },
 });

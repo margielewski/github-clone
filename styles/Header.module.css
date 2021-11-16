@@ -1,0 +1,39 @@
+.header {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  display: flex;
+}
+
+.header-switch {
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header-logo {
+  cursor: pointer;
+  margin: 0 auto;
+  width: max-content;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.header-logout {
+  background: none;
+  border: none;
+  color: var(--color-text-primary);
+  position: absolute;
+  right: 48px;
+  top: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 600px) {
+  .header-switch {
+    top: 0px;
+    transform: translateY(0);
+  }
+}

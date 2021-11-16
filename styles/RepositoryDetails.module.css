@@ -1,0 +1,46 @@
+.repository {
+  color: var(--color-text-primary);
+}
+
+.repository-title {
+  margin: 0 0 16px 0;
+}
+
+.repository-wrapper {
+  justify-content: space-between;
+  display: flex;
+}
+
+.repository-owner {
+  min-width: 400px;
+}
+
+.repository-owner-name {
+  font-size: 20px;
+  margin: 16px 0 0 0;
+}
+
+.repository-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.repository-details-row {
+  margin: 0 0 24px 0;
+}
+
+.repository-details-label {
+  font-size: 14px;
+  margin: 0 0 8px 0;
+}
+
+.repository-details-value {
+  font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  .repository-owner {
+    min-width: 200px;
+  }
+}
