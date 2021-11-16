@@ -1,14 +1,14 @@
 body,
 body[data-theme='light'] {
   --color-text-primary: #0e1117;
-  --color-text-secondary: #076963;
   --color-bg-primary: #fff;
-  --color-bg-toggle: #1e90ff;
+  --color-button-primary: #5fdef3;
+  --color-button-text-primary: #000;
 }
 
 body[data-theme='dark'] {
   --color-text-primary: #fff;
-  --color-text-secondary: #ff6b00;
   --color-bg-primary: #0e1117;
-  --color-bg-toggle: #a9a9a9;
+  --color-button-primary: #5fdef3;
+  --color-button-text-primary: #000;
 }
